@@ -1,0 +1,39 @@
+.common-purple{
+    background-color: rgb(118, 0, 164);
+}
+
+/* style for left side dashboard */
+.bg-left {
+  background-color: rgba(205, 70, 250, 0.64);
+}
+/* application name left side */
+.title {
+  color: #ea9ae3;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+/* logout button */
+.button {
+  color: white;
+}
+.button:hover {
+  color: #54005f;
+}
+
+/*  style for middle section dashboard  */
+.bg-middle {
+  background-color: #f9f9f9;
+}
+
+/* add habit button */
+.mot-bg{
+  background: #430361;
+  background: linear-gradient(90deg, rgb(81, 10, 119) 0%, rgba(139, 56, 150, 1) 76%, rgba(222, 135, 210, 1) 100%);
+}
+
+/*  style for right section dashboard  */
+.right-bg {
+  background-color: #f8edfc;
+}
