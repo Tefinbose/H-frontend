@@ -3,7 +3,7 @@ import { serverurl } from "./serverurl";
 
 // register api
 export const registerUserApi = async (reqBody) => {
-  return await commonApi("POST", `${serverurl}/user`, reqBody);
+  return await commonApi("POST", `${serverurl}/user, reqBody`);
 };
 
 //   get user
@@ -14,7 +14,7 @@ export const getUserApi = async () => {
 
 // post user register
 export const postUserApi = async(reqBody)=>{
-  return await commonApi("POST", `${serverurl}/user`, reqBody)
+  return await commonApi("POST", `${serverurl}/user, reqBody`)
 }
 
 
@@ -65,12 +65,10 @@ export const deleteLogApi = async(id) =>{
 
 // add xp api
 export const addXpApi = async (id, userXp) => {
-  return await commonApi('PUT', `${serverurl}/user/${id}`, userXp);
+  return await commonApi('PUT',` ${serverurl}/user/${id}`, userXp);
 };
 
 // get motivation quotes api
 export const getMotivationApi = async () => {
   return await commonApi("GET", `${serverurl}/motivations`);
 };
-
-

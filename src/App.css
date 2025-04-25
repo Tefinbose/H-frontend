@@ -1,39 +1,121 @@
-.common-purple{
-    background-color: rgb(118, 0, 164);
-}
-
-/* style for left side dashboard */
-.bg-left {
-  background-color: rgba(205, 70, 250, 0.64);
-}
-/* application name left side */
-.title {
-  color: #ea9ae3;
-}
-.cursor-pointer{
-  cursor: pointer;
-}
-
-/* logout button */
-.button {
-  color: white;
-}
-.button:hover {
-  color: #54005f;
-}
-
-/*  style for middle section dashboard  */
-.bg-middle {
-  background-color: #f9f9f9;
-}
-
-/* add habit button */
 .mot-bg{
   background: #430361;
   background: linear-gradient(90deg, rgb(81, 10, 119) 0%, rgba(139, 56, 150, 1) 76%, rgba(222, 135, 210, 1) 100%);
 }
+.hover-edit:hover {
+  
+ 
+  color: #ffc107 !important;
+}
 
-/*  style for right section dashboard  */
-.right-bg {
-  background-color: #f8edfc;
+.hover-delete:hover {
+ 
+   
+  color: #e10000 !important;
+}
+.progress-bar.bg-custom-purple {
+  background-color: #60038a !important; /* Dark purple */
+}
+
+.bg-left{
+  background-color: rgba(205, 70, 250, 0.64);
+}
+.title{
+  color:#ea9ae3;
+}
+
+.bg-middle{
+  background-color: #f9f9f9;
+}
+.head-bg{
+  
+  color:  #400067 !important;
+}
+
+
+/* logout button */
+.button{
+  color: white;
+}
+.button:hover{
+color: #54005f;
+
+} 
+.right-bg{
+  background-color: #e6deff;
+}
+
+
+/* log table */
+.bg-color{
+background-color: #ea9ae3 !important;
+}
+
+/* calender */
+.css-1nxbkmn-MuiPickersCalendarHeader-root{
+background-color: rgb(245, 167, 245);
+}
+.css-qct7wd-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+background-color: rgb(245, 167, 245) !important ;
+
+}
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+background-color: rgb(245, 167, 245) !important ;
+
+}
+.css-5wchs2-MuiDateCalendar-root{
+box-shadow: 3px 2px 10px 5px #888888 !important;
+}
+
+/* Custom Styles for Log Table */
+.table-container {
+background: #f8f9fa;
+padding: 50px;
+border-radius: 10px;
+
+}
+
+.table {
+border-radius: 10px;
+border: none;
+overflow: hidden;
+}
+
+.table th {
+background: #e162d2 !important;
+color: #fff;
+text-align: center;
+}
+
+.table td {
+text-align: center;
+padding: 15px;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+background-color: #e9ecef;
+cursor: pointer;
+}
+
+.delete-icon {
+color: red !important;
+cursor: pointer;
+font-size: 20px;
+transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+color: #040303 !important;
+}
+/* leader board */
+.table-hover tbody tr:hover {
+background-color: #f0f8ff;
+}
+
+.table-warning {
+background-color: #fff3cd !important;
 }
