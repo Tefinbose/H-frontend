@@ -1,13 +1,13 @@
-import React from "react";
 import { faPen } from "@fortawesome/free-solid-svg-icons/faPen";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { editHabitApi } from "../services/allApis";
-import { ToastContainer, toast } from "react-toastify";
+import { editHabitApi } from "../services/allApi";
+import { ToastContainer } from "react-toastify";
 
-function Edit({ habit, setUpdateStatus }) {
+function Edit({ habit,  setUpdateStatus }) {
+  const darkPurple = "rgb(87, 16, 87)";
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -31,12 +31,13 @@ function Edit({ habit, setUpdateStatus }) {
     }
   }, [habit]);
 
-  // edit api
+  //   edit api
   const handleUpdate = async () => {
     const result = await editHabitApi(habit.id, inputData);
     if (result.status >= 200 && result.status < 300) {
-      // alert("Updated  successfully! 😎");
+      //  alert("Updated  successfully! 😎");
       handleClose();
+      
       setUpdateStatus(result.data);
     }
   };
@@ -45,7 +46,7 @@ function Edit({ habit, setUpdateStatus }) {
     <>
       <button
         onClick={handleShow}
-        className=" border-0 me-3 hover-edit"
+        className=" border-0 me-3 head-bg hover-edit"
         style={{ backgroundColor: "#f2e9ff" }}
       >
         <FontAwesomeIcon icon={faPen} />
@@ -53,7 +54,7 @@ function Edit({ habit, setUpdateStatus }) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="fw-bold">Edit Habit</Modal.Title>
+          <Modal.Title>Edit Habit</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="p-5 ">
@@ -70,8 +71,8 @@ function Edit({ habit, setUpdateStatus }) {
             {/* Frequency Selector */}
             <div className="mb-3 d-flex ">
               <button
-                className=" text-light  border-0 "
-                style={{ backgroundColor: "rgb(118, 0, 164)" }}
+                className=" text-light "
+                style={{ backgroundColor: darkPurple }}
               >
                 Frequency
               </button>
@@ -157,9 +158,9 @@ function Edit({ habit, setUpdateStatus }) {
         <Modal.Footer>
           <Button
             variant=""
-            className="text-light "
+            className="text-light"
+            style={{ backgroundColor: "rgb(118, 0, 164)"  }}
             onClick={handleUpdate}
-            style={{ backgroundColor: "rgb(118, 0, 164)" }}
           >
             Update
           </Button>

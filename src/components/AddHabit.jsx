@@ -1,10 +1,10 @@
-import React from "react";
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { addHabitApi } from "../services/allApis";
+import { addHabitApi } from "../services/allApi";
 import { ToastContainer, toast } from "react-toastify";
 
 function AddHabit({ loggedInUser, setAddHabitStatus }) {
@@ -14,17 +14,15 @@ function AddHabit({ loggedInUser, setAddHabitStatus }) {
     setShow(false);
     setHabitdetails({ habitname: "", frequency: "", category: "" });
   };
-
   const handleShow = () => setShow(true);
 
-  // state to store habits details
+  // state to store
   const [habitdetails, setHabitdetails] = useState({
     habitname: "",
     frequency: "",
-    category: "",
+    category: ""
   });
 
-  //   add habit api
   const handleSubmit = async () => {
     const { habitname, frequency, category } = habitdetails;
 
@@ -35,23 +33,26 @@ function AddHabit({ loggedInUser, setAddHabitStatus }) {
         toast.error("User not logged in");
         return;
       }
-      //   store habit details and userid of login user
-      const newHabit = {
-        ...habitdetails,
-        userId: loggedInUser.id,
-      };
+      else {
+        const newHabit = {
+          ...habitdetails,
+          userId: loggedInUser.id,
+        };
 
-      const result = await addHabitApi(newHabit);
+        const result = await addHabitApi(newHabit);
 
-      if (result.status >= 200 && result.status < 300) {
-        // alert("Habit added successfully! 😃");
-        setAddHabitStatus(result.data);
-        handleClose();
-        setHabitdetails({ habitname: "", frequency: "", category: "" });
+        if (result.status >= 200 && result.status < 300) {
+          alert("Habit added successfully! 😃");
+          setAddHabitStatus(result.data);
+          handleClose();
+          setHabitdetails({ habitname: "", frequency: "", category: "" });
+        }
       }
     }
   };
 
+  //   bg color
+  const darkPurple = "rgb(118, 0, 164)";
   return (
     <>
       <div>
@@ -66,7 +67,7 @@ function AddHabit({ loggedInUser, setAddHabitStatus }) {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className="fw-bold ">Add Habit</Modal.Title>
+            <Modal.Title>Add Habit</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="p-5 ">
@@ -88,7 +89,10 @@ function AddHabit({ loggedInUser, setAddHabitStatus }) {
 
               {/* Frequency Selector */}
               <div className="mb-3 d-flex ">
-                <button className=" text-light common-purple border-0 ">
+                <button
+                  className=" text-light "
+                  style={{ backgroundColor: darkPurple }}
+                >
                   Frequency
                 </button>
                 <select
@@ -178,9 +182,9 @@ function AddHabit({ loggedInUser, setAddHabitStatus }) {
           <Modal.Footer>
             <Button
               variant=""
-              onClick={handleSubmit}
-              className="text-light "
               style={{ backgroundColor: "rgb(118, 0, 164)" }}
+              onClick={handleSubmit}
+              className="text-light"
             >
               Submit
             </Button>
