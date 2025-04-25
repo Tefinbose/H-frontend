@@ -1,1 +1,1 @@
-export const serverurl ='http://localhost:4002'
+export const serverurl ='https://react-habit-backend.onrender.com'
